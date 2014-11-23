@@ -1,4 +1,4 @@
-define(["catext-objects"], function(CObjs) {
+define(["catext/catext-objects"], function(CObjs) {
 
     var insertAt = function(array, index, item) {
         array.splice(index, 0, item);

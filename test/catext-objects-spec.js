@@ -1,4 +1,4 @@
-define(["catext-objects"], function(CatExt) {
+define(["catext/catext-objects"], function(CatExt) {
 
     var catriona = {
         name: "Catriona",

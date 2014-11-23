@@ -1,4 +1,4 @@
-define(["catext-arrays"], function(CatExt) {
+define(["catext/catext-arrays"], function(CatExt) {
 
     describe("Array.insertAt", function() {
 

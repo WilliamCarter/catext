@@ -1,8 +1,10 @@
 requirejs.config({
   // Karma serves files under /base, which is the basePath from your config file
-  baseUrl: '/base/src/',
+  baseUrl: '/base/',
 
-  paths: {},
+  paths: {
+  	catext: "src"
+  },
 
   shim: {},
 
