@@ -159,4 +159,37 @@ define(["catext/catext-objects"], function(CatExt) {
         });
     });
 
+
+    describe("optionally", function() {
+
+        var catriona, proof;
+        var success = function(food) {
+            proof = food.type;
+        };
+        var failure = function() {
+            proof = "FAILURE";
+        };
+
+        beforeEach(function() {
+            catriona = { cookery: { food: null } };
+            proof = null;
+        });
+
+        it("should execute the success function if the object exists", function() {
+            catriona.cookery.food = { type: "cheese" };
+            CatExt.optionally(catriona.cookery.food, success);
+            expect(proof).toBe("cheese");
+        });
+
+        it("should execute the failure function if the object does not exist", function() {
+            CatExt.optionally(catriona.cookery.food, success, failure);
+            expect(proof).toBe("FAILURE");
+        });
+
+        it("should do nothing if the object does not exist and no failure function is given", function() {
+            CatExt.optionally(catriona.cookery.food, success);
+            expect(proof).toBe(null);
+        });
+    });
+
 });

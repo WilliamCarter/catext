@@ -53,11 +53,16 @@ define([], function() {
             }
         }
 
+    };
+
+    var optionally = function(object, ifTrue, ifFalse) {
+        object ? ifTrue(object) : ifFalse && ifFalse();
     }
 
     return {
         clone: clone,
-        equality: equality
+        equality: equality,
+        optionally: optionally
     };
 	
 });
