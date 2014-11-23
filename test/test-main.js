@@ -6,7 +6,10 @@ requirejs.config({
 
   shim: {},
 
-  deps: ["/base/test/catext-spec.js"],
+  deps: [
+  	"/base/test/catext-arrays-spec.js",
+  	"/base/test/catext-objects-spec.js"
+  ],
 
   // we have to kickoff jasmine, as it is asynchronous
   callback: window.__karma__.start
