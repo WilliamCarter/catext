@@ -60,4 +60,28 @@ define(["catext/catext-arrays"], function(CatExt) {
 
     });
 
+
+    ddescribe("Array.firstSuchThat", function() {
+
+        var tracks = [
+            { title: "Wreaking Ball", artist: "Mylie Cyrus" },
+            { title: "Seeman", artist: "Rammstein" },
+            { title: "Du Hast", artist: "Rammstein" }
+        ];
+
+        var isByArtist = function(artist) {
+            return function(track) {
+                return (track.artist === artist);
+            }
+        };
+
+        it("should return null if not in the array", function() {
+            expect(CatExt.firstSuchThat(tracks, isByArtist("Blur"))).toBe(null);
+        });
+
+        it("should return the first element the predicate matches if it exists", function() {
+            expect(CatExt.firstSuchThat(tracks, isByArtist("Rammstein")).title).toBe("Seeman");
+        });
+    });
+
 });

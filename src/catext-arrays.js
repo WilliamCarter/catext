@@ -23,9 +23,19 @@ define(["catext/catext-objects"], function(CObjs) {
         }
     };
 
+    var firstSuchThat = function(array, predicate) {
+        for (var i = 0; i < array.length; i++) {
+            if (predicate(array[i])) {
+                return array[i];
+            }
+        }
+        return null;
+    };
+
     return {
         insertAt: insertAt,
-        contains: contains
+        contains: contains,
+        firstSuchThat: firstSuchThat
     };
 	
 });
